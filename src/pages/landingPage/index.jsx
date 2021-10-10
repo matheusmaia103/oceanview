@@ -1,6 +1,8 @@
 import { Button, Typography, Box } from "@material-ui/core";
 import GlobalStyles from "./style";
-import { Carousel } from "@trendyol-js/react-carousel";
+import { Divider, Accordion, AccordionSummary, AccordionDetails } from "@mui/material";
+import { ExpandMoreRounded } from "@material-ui/icons";
+
 
 export default function LandingPage() {
   return (
@@ -8,19 +10,20 @@ export default function LandingPage() {
       <GlobalStyles />
 
       <Box component="header">
-        <Typography variant="h4">Faça a viagem dos seus sonhos</Typography>
-        <Typography variant="h5">
+        <Typography color='inherit' variant="h4">Faça a viagem dos seus sonhos</Typography>
+        <Typography color='inherit' variant="h5">
           de maneira fácil e segura com a Oceanview
         </Typography>
         <br />
 
-        <Button color="secondary" variant="contained">
+        <Button color='primary' variant="contained">
           Confira nossas ofertas
         </Button>
       </Box>
-      <Box mt={2} component="main">
-        <Typography variant="h5">Nossos serviços</Typography>
-
+      <main>
+        <Divider className='divider' textAlign='center'>
+          <Typography variant="h5" color='inherit'>Nossos serviços</Typography>
+        </Divider>
         <section className="infos">
           <div className="text">
             <Typography variant="h6">Hospedagem</Typography>
@@ -30,7 +33,7 @@ export default function LandingPage() {
             Todos os nossos hotéis parceiros possuem excelentes avaliações. Não
             se preocupe, sua segurança estará garantida conosoco!
           </div>
-          <div className="img"></div>
+          <div className="img toRight"></div>
         </section>
 
         <section className="infos">
@@ -43,7 +46,7 @@ export default function LandingPage() {
             segurança e tranquilidade. Temos profissionais experientes para
             garantir sua satisfação.
           </div>
-          <div className="img"></div>
+          <div className="img toLeft"></div>
         </section>
 
         <section id="destinations" className="examples">
@@ -61,12 +64,12 @@ export default function LandingPage() {
           <ul>
             <li>Mergulho</li>
             <li>Trilhas</li>
-            <li>Passeios de dromedário</li>
-            <li>scky</li>
+            <li>Tour pela cidade</li>
+            <li>Passeios a camelo</li>
           </ul>
         </section>
 
-        <section id="feedback">
+        <section id="feedback" className='exmaples'>
           <Typography variant="h6">
             Confira a opnião de nossos clientes
           </Typography>
@@ -87,9 +90,83 @@ export default function LandingPage() {
               <Typography variant="h7">Pamela </Typography>
               Sensacional, uma das melhores experiências
             </li>
+            <li>
+              <div className="img"></div>
+              <Typography variant="h7">Pamela </Typography>
+              Sensacional, uma das melhores experiências
+            </li>
+            <li>
+              <div className="img"></div>
+              <Typography variant="h7">Pamela </Typography>
+              Sensacional, uma das melhores experiências
+            </li>
+            <li>
+              <div className="img"></div>
+              <Typography variant="h7">Pamela </Typography>
+              Sensacional, uma das melhores experiências
+            </li>
           </ul>
         </section>
-      </Box>
+      
+        <Box width='100%' marginTop='40px' justifyContent='flex-start'>
+          <Divider textAlign='center'>
+          <Typography variant='h5' marginBottom='10px'>Perguntas frequentes</Typography>
+          </Divider>
+          <br />
+          <Accordion color='secondary'>
+            <AccordionSummary
+              expandIcon={<ExpandMoreRounded />}
+              aria-controls="frist"
+              id="frist"
+            >
+              <Typography variant='h6'>Por que preciso viajar com a Ocean View?</Typography>
+            </AccordionSummary>
+
+            <AccordionDetails>
+          Simples. Somos a melhor agência de viagens com as melhores avaliações. Nosso atendimento é reconhecido como um dos melhores no mercado de viagens. E nossa rede de hotéis e passeios surpreendem a todos. Tudo isso porque nossa prioridade não é seu dinheiro, e sim sua felicidade.            </AccordionDetails>
+        </Accordion>
+          <Accordion color='secondary'>
+            <AccordionSummary
+              expandIcon={<ExpandMoreRounded />}
+              aria-controls="second"
+              id="second"
+            >
+              <Typography variant='h6'>O que isso está me oferecendo?</Typography>
+            </AccordionSummary>
+
+            <AccordionDetails>
+              A Ocean View oferece a você viagens inesquecíveis com hospedagem e passeios incríveis, por um preço justo. Temos ótimas avaliações no mercado e prezamos muito pelo atendimento humanizado de nossos clientes.
+            </AccordionDetails>
+        </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreRounded />}
+              aria-controls="thrid"
+              id="thrid"
+            >
+              <Typography variant='h6'>E se eu não gostar?</Typography>
+            </AccordionSummary>
+
+            <AccordionDetails>
+              Garantimos que tudo ocorrerá bem em sua viagem. Mas caso tenha algum problema, entre em contato conosco, que iremos dar a solução! E no pior dos casos, faremos o reembolso de 100% do seu pagamento.
+            </AccordionDetails>
+        </Accordion>
+          <Accordion>
+            <AccordionSummary
+              expandIcon={<ExpandMoreRounded />}
+              aria-controls="fouth"
+              id="fouth"
+            >
+              <Typography variant='h6'>Não estou interessado em viajar agora.</Typography>
+            </AccordionSummary>
+
+            <AccordionDetails>
+              Tudo bem, nós compreendemos. Mas, vale lembrar que preços de viagens podem subir de uma hora para outra, então pode ser que quando você queira viajar os preços não sejam mais os mesmos. Aconselhamos realizar sua viagem agora mesmo!
+            </AccordionDetails>
+        </Accordion>
+        </Box>
+      
+      </main>
     </article>
   );
 }
