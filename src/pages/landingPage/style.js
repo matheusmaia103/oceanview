@@ -1,15 +1,13 @@
 import { createGlobalStyle } from "styled-components";
+
 import {
   canada,
   peru,
   rio,
   italia,
   resort1,
-  resort2,
-  mergulho,
-  trilha,
-  cityTour,
-  camelo,
+  coqueiro,
+  img2,
   girl2,
   guy1,
   guy2,
@@ -39,9 +37,10 @@ const GlobalStyles = createGlobalStyle`
         flex-wrap: wrap;
         color: black;  
         
-        background-image:  linear-gradient(179deg,rgba(0,0,0,62) -5%,rgba(255,255,255,0) 90%),url(${peru});
+        background-image:  linear-gradient(179deg,rgba(0,0,0,62) -5%,rgba(255,255,255,0) 60%),url(${img2});
         background-size: cover;
-        background-position: center bottom;
+        background-position: center;
+
         position: relative;
         overflow: hidden !important;
 
@@ -64,6 +63,8 @@ const GlobalStyles = createGlobalStyle`
 
     .divider{
         width: 100% !important;
+        margin-bottom: 20px;
+        margin-top: 80px;
     }
 
     main{
@@ -73,7 +74,7 @@ const GlobalStyles = createGlobalStyle`
         align-items: center;
 
         padding: 20px;
-        padding-top: 35px;
+        padding-top: 60px;
 
         width: 100%;
         max-width: 1000px;
@@ -81,88 +82,130 @@ const GlobalStyles = createGlobalStyle`
         overflow: hidden;
 
 
-        .infos{
+    .infos{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 15px;
-        margin-top: 85px;
-        text-align: center;
+
+        margin: 85px -30px 40px -30px;
+        padding: 10px;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
         
         width: 100%;
-        height: 400px;
+        
+        color: white;
         
         overflow: hidden;
 
-        transition: all 0.5s ease;
+
+        background-image:
+            linear-gradient(178deg,rgba(0,0,0,1) -41%,rgba(255,255,255,0) 80%),
+            linear-gradient(351deg,rgba(0,0,0,1) -41%,rgba(255,255,255,0) 100%),
+            url(${coqueiro});
+
+        
+        background-size: cover;
+        background-position: center;
+                
+        transition: 1s ease;
 
             .text{                
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
-                width: 45%;
+                text-align: center;
 
-                padding: 10px;
-                padding-bottom: 20px;
+                width: 100%;
+
+                padding: 20px;
+
+                height: 100%;
             }
-            .img{
-                width: 45%;
-                background-image: url(${resort1});
-                background-size: 150%;
-                background-position: bottom left;
-                transform: scaleX(-1);
+
                 
-                transition: 1s ease;
-            }
-            .toLeft{
-                background-position: bottom left;
-            }
-            .toRight{
-                background-position: bottom right;
-            }
+            @media screen and (max-width: 600px) {
 
-            h6{
-                font-weight: 10px !important;
-            }
-        }
+                max-width: initial;
+                width: 100% !important;
+                display: initial;
+                margin-left: 0;
+                margin-right: 0;
 
-        .infos:nth-child(odd){
-            flex-direction: row-reverse;
-            background-position: bottom right;
-            margin-top: 85px;
-            margin-bottom: 100px;
+                *{                
+                    max-width: initial;
+                }
 
-            .img{
-                background-image: url(${resort2});
+                .img{
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    right: 0;
+                    left: 0;
+
+                    z-index: -3;
+
+                    width: 100%;
+                }
+
+                .text{
+                    background-color: transparent;
+                    width: 100%;
+
+                }
+
             }
         }
 
         .examples{
-            background-color: #0089e3;
-            border-right: 20px solid #0089e3;
 
-            width: 100%;
+            
+            background-color: #27482f;
+            width: 80%;
+            width: 100% !important;
 
             padding-top: 40px;
-            padding-bottom: 20px;
+            padding-bottom: 10px;
             padding-left: 20px;
 
-            margin-top: 15px;
-            margin-bottom: 15px;            
-
-            //border-radius: 40px 0 0 40px;
-            border-radius: 40px;
+            margin-bottom: 5px;
             
+            border-radius: 10px;
+            border: 10px solid #27482f;
+
             color: white;
 
-            //overflow: hidden;
+            overflow: hidden;
+
+            
+
             ul{
                 display: -webkit-inline-box;
                 overflow-x: scroll;
 
                 width: 100%;
-                padding:0;
+                padding: 10px;
+                padding-bottom: 30px;
+
+
+                            
+                    ::-webkit-scrollbar {
+                        width: 10%; 
+                    }
+
+                    ::-webkit-scrollbar-track {
+                        background-color: transparent;
+                    }
+
+                    ::-webkit-scrollbar-thumb {
+
+                    border-radius: 20px;
+                    background-color: #16281a;
+                    }
+
                 
 
                 li{
@@ -170,8 +213,8 @@ const GlobalStyles = createGlobalStyle`
                     margin-right: 40px;
                     margin-bottom: 10px;
 
-                    width: 250px;
-                    height: 400px;
+                    width: 200px;
+                    height: 350px;
                     background-color: darkgrey;
 
                     border-radius: 20px;
@@ -187,90 +230,134 @@ const GlobalStyles = createGlobalStyle`
 
                     cursor: pointer;
 
-                    background-size: contain;
+                    box-shadow: 6px 9px 20px -4px black;
+                    transition: 3s all ease !important;
+                    
                     }
 
                     li:nth-child(1){
-                        background-image:   linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 25%), url(${rio})
+                        background-image:   linear-gradient(0deg, rgba(0,0,0,1) -5%, rgba(255,255,255,0) 25%), url(${rio})
                     }
 
                     li:nth-child(2){
-                        background-image:   linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 25%), url(${peru})
+                        background-image:   linear-gradient(0deg, rgba(0,0,0,1) -5%, rgba(255,255,255,0) 25%), url(${peru})
                     }
 
                     li:nth-child(3){
-                        background-image:   linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 25%), url(${canada})
+                        background-image:   linear-gradient(0deg, rgba(0,0,0,1) -5%, rgba(255,255,255,0) 25%), url(${canada})
                     }
 
                     li:nth-child(4){
-                    background-image:   linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 25%), url(${italia});
+                        background-image:   linear-gradient(0deg, rgba(0,0,0,1) -5%, rgba(255,255,255,0) 25%), url(${italia});
                     }
 
                     li{
-                    background-size: cover;
-                    background-position: center;
-                    background-repeat: no-repeat;
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+
                     }
+
+                    
 
                     li:last-child{
-                        margin-right: 10px;
+                        margin-right: 5px;
                     }
 
+                
 
             }
         }
 
-        .examples:nth-child(odd){
-            background-color: #3fa341;
-            border-right: 20px solid #3fa341;
-            
+        
+    #passeios{
+        
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
 
-                    li:nth-child(1){
-                        background-image:  linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 25%), url(${trilha})
-                    }
+        width: 90%;
 
-                    li:nth-child(2){
-                        background-image:  linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 25%), url(${mergulho})
-                    }
+        margin-top: 30px;
+        margin-bottom: 50px;
 
-                    li:nth-child(3){
-                        background-image:  linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 25%), url(${cityTour})
-                    }
+        .card{
 
-                    li:nth-child(4){
-                    background-image:  linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 25%), url(${camelo});
-                    }
+            box-shadow: 7px 9px 20px -4px grey;
+            box-sizing: border-box;
 
+            width: 25vw;
+            max-width: 400px !important;
+            min-width: 300px;
+
+            margin: 20px;
+
+            border-radius: 10px;
+
+
+            transition: 0.3s ease;
+            :hover{
+                transform: scale(1.05);
+            }
         }
+    }
+    
 
         #feedback{
-            background-color: #00648A;
+            background-color: #0f485e;
             width: 100%;
 
             padding-top: 40px;
-            padding-bottom: 40px;
+            padding-bottom: 10px;
             padding-left: 20px;
 
-            margin-top: 15px;
-            margin-bottom: 15px;
             
-            border-radius: 40px;
-            border: 20px solid #00648A;
+            margin: 0 -30px 40px -30px;
+            
+            border-radius: 10px;
+            border: 5px solid #191b1c;
 
             color: white;
 
             overflow: hidden;
 
+            display: flex;
+            justify-content: center;
+
+            
+            
+            background-image: linear-gradient(0deg, rgba(0,0,0,1) 2%, rgba(255,255,255,0) 65%), url(${resort1});
+            background-size: cover;
+
 
             
             ul{
-                width: 100%;
                 display: -webkit-inline-box;
+
 
                 overflow-x: scroll;
 
                 margin: 0;
                 padding: 0;
+                padding-bottom: 30px;
+
+                
+                ::-webkit-scrollbar {
+                    width: 10%; 
+                    height: 15px;
+                }
+
+                ::-webkit-scrollbar-track {
+                    background-color: transparent;
+                }
+
+                ::-webkit-scrollbar-thumb {
+
+                border-radius: 20px;
+                background-color: #191b1c;
+                }
 
                li{
                    text-align: center;
@@ -289,6 +376,8 @@ const GlobalStyles = createGlobalStyle`
                     flex-direction: column;
                     justify-content: space-evenly;
                     align-items: center;
+
+                    backdrop-filter: blur(15px);
                     .img{
                         width: 100px;
                         height: 100px;
@@ -325,13 +414,55 @@ const GlobalStyles = createGlobalStyle`
         }
     }
 
+    
     #faq{
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
         flex-direction: column;
 
+        width: 80%;
 
+        margin: 0px 0 20px  0;
+
+    }
+
+    .bgMove{
+        background-position: center;
+        animation: bgMove 80s  infinite forwards;
+    }
+
+    @keyframes bgMove{
+        0%{
+            background-size: 150%;
+        }
+
+        50%{
+            background-size: 300%;
+        }
+
+        100%{
+            background-size: 150%;
+        }
+    }
+
+    .bgMoveDown{
+        background-size: 150%;
+        background-position: center;
+        animation: bgMoveDown 160s  infinite forwards;
+    }
+    @keyframes bgMoveDown{
+        0%{
+            background-position: center top;
+        }
+
+        50%{
+            background-position: center bottom;
+        }
+
+        100%{
+            background-position: center top;
+        }
     }
 
     @media screen and (max-width: 600px) {
@@ -341,8 +472,18 @@ const GlobalStyles = createGlobalStyle`
             border-radius: 25px;
             
             margin-top: -30px;
+            padding: 60px 0 20px 0;
         }
 
+        .examples{
+            width: 100% !important;
+            border-radius: 0 !important;
+        }
+
+        #feedback{
+            border-radius: 0!important;
+            border: 0!important;
+        }
     }
 `;
 

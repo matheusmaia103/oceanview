@@ -2,8 +2,17 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
+    html,
     body{
         background-color: #ffffff;
+
+        width: 100%auto;
+        height: 100% !important;
+
+        #root{            
+            width: 100%auto;
+            height: 100% !important;
+        }
     }
 
     *{
@@ -12,10 +21,12 @@ const GlobalStyle = createGlobalStyle`
     }
 
     nav{
-        background-color: black;
-        color: white;
+        background-color: #041218;
+        color: white!important;
+        box-shadow: 6px 9px 20px -8px black;
 
         padding: 10px;
+
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -26,7 +37,9 @@ const GlobalStyle = createGlobalStyle`
         left: 0;
 
         z-index: 10;
-        
+        button{
+            color: white !important;
+        }
         .hamburguer{
             display: none;
         }
@@ -75,21 +88,38 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    #app{
+        width: 100% !important;
+        height: 100% !important;
+
+        
+        .css-13xfq8m-MuiTabPanel-root{
+            position: relative;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    .footer{
+        background-color: white;
+    }
+
     footer{
         background-color: black;
         color: #e1e1e1;
         font-size: 14px;
 
         width: 100%;
-        min-height: 500px;
 
+        padding: 15px 0 100px 0;
         overflow: hidden;
+
 
         #mail{
             
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-around;
 
             text-align: center;
 
@@ -100,6 +130,11 @@ const GlobalStyle = createGlobalStyle`
                 display: inline-grid;
 
                 transform: scale(0.8)
+            }
+
+            .btn{
+                background-color: transparent !important;
+                color:white;
             }
 
         }
