@@ -273,17 +273,17 @@ export default function LandingPage() {
           <ul>
             <li data-aos='fade'>
               <div className="img"></div>
-              <Typography variant="h7">José </Typography>
+              <Typography variant="h7">Michael</Typography>
               Sensacional, uma das melhores experiências
             </li>
             <li data-aos='fade'>
               <div className="img"></div>
-              <Typography variant="h7">Roberto </Typography>
+              <Typography variant="h7">Carlos</Typography>
               Sensacional, uma das melhores experiências
             </li>
             <li data-aos='fade'>
               <div className="img"></div>
-              <Typography variant="h7">Pamela </Typography>
+              <Typography variant="h7">Pamela</Typography>
               Sensacional, uma das melhores experiências
             </li>
           </ul>
